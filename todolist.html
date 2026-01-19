@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+    <title>todolist</title>
+    <style>
+
+    </style>
+</head>
+
+
+<body>
+
+    <div id="container">
+
+    <h3 id="heading">To-do list</h3>
+
+    <input id="input" placeholder="enter the task"/>
+
+    <button id="add">add</button>
+    <button id="delete">delete</button>
+
+    <ul id="unordered"></ul>
+
+    </div>
+
+    <script>
+
+        let variable=document.getElementById("input")
+        let variable1=document.getElementById('add')
+        let stores=document.getElementById('unordered')
+
+        variable1.addEventListener('click',()=>{
+            let newvariable=variable.value 
+            if(newvariable){
+                let create=document.createElement("li")
+                create.textContent=newvariable
+                stores.appendChild(create)
+                variable.value=''
+            }
+        })
+
+
+        let variable2=document.getElementById('delete')
+        variable2.addEventListener('click',()=>{
+            if(stores.lastChild){
+                stores.removeChild(stores.lastChild)
+            }
+        })
+    </script>
+</body>
+</html>
